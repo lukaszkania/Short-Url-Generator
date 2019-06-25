@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Url shortener </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+    {% if url %}
+        <h3>Your shortcuted url: {{url.shorted_url}}</h3>
+    {% endif %}
+{% endblock content %}
